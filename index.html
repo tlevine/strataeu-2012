@@ -83,16 +83,50 @@
 
 <section class="slide">
 	<h2>Quickly search messy text</h2>
-	stripping spaces and making lowercase before searching OCRed text
+	<p>Removing spaces and make lowercase before searching messy text</p>
+	<pre><code>
+# Python
+''.join(rawtext.split()).lower()
+
+# Shell
+sed -e 's/ //g' | tr '[A-Z]' '[a-z]'
+</code></pre>
 </section>
 
 <section class="slide">
 	<h2>Write tests</h2>
+	<pre><code>
+# Forty ads were randomly selected from the 389 that had been scraped by April 16.
+
+# This sample contained eight advertisements about something other than estates.
+# Originally, the scraped data were correct for all eight of these advertisements,
+# and this hasn't changed with the updated scraper.
+unittest.TextTestRunner(verbosity=0).run(nomatch)
+
+# After adjusting the scraper to handle the various cleaning,
+# increasing the number correct to 36 out of 40 match on all fields;
+# after correcting the name suffix issue, this is now 37 of 40.
+unittest.TextTestRunner(verbosity=0).run(removecomma)
+
+# When we ignored missing fields in the original scraper,
+# only 2 were incorrect. In the updated scraper,
+# no incorrect data are reported.
+unittest.TextTestRunner(verbosity=0).run(precision)
+</code></pre>
 </section>
 
 <section class="slide">
 	<h2>Searching for structured codes is easy</h2>
-	postal codes, phone numbers, ISBNs, &c.
+	<pre><code>
+# United States postal code
+/([0-9]{5})-?([0-9]{4})?/
+
+# Phone number
+
+# ISBNs
+
+</code></pre>
+	
 </section>
 
 <section class="slide">
