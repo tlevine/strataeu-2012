@@ -57,7 +57,7 @@
 </section>
 
 <section class="slide">
-	<h1>Language-agnostic tricks</h1>
+	<h1>General tricks</h1>
 </section>
 
 <section class="slide">
@@ -70,13 +70,75 @@
 </section>
 
 <section class="slide">
-	<h2></h2>
+	<h2>XPath or CSS?</h2>
+	<p>CSS normally makes more sense.</p>
+	<ul>
+		<li>CSS should run faster.</li>
+		<li>More people probably know CSS.</li>
+		<li>CSS is normally shorter.</li>
+	</ul>
+	<p>XPath is more powerful</p>
+	<!-- Examples, probably on multiple slides -->
+</section>
+
+<section class="slide">
+	<h2>Quickly search messy text</h2>
+	stripping spaces and making lowercase before searching OCRed text
+</section>
+
+<section class="slide">
+	<h2>Write tests</h2>
+</section>
+
+<section class="slide">
+	<h2>Searching for structured codes is easy</h2>
+	postal codes, phone numbers, ISBNs, &c.
+</section>
+
+<section class="slide">
+	<h2>Use an XML/HTML parser</h2>
+	<ul>
+		<li></li>
+		<li>C#: </li>
+		<li>Java: </li>
+		<li>R: </li>
+		<li>php: simple_html_dom</li>
+		<li>Ruby: Nokogiri</li>
+		<li>Python: lxml, BeautifulSoup</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>split-apply-combine</h2>
+	You've probably heard this already. If not, read Hadley's paper or watch his talks.
+</section>
+
+<section class="slide">
+	<h2>Document-like interfaces for loading data to relational databases</h2>
+	dumptruck, node-sqlite
+</section>
+
+<section class="slide">
+	<h2>Updating factor levels</h2>
+	<p>In languages with dictionaries</p>
+	<p>In R</p>
+</section>
+
+<section class="slide">
+	<h2>Validating addresses</h2>
+Zipcode lookup API https://views.scraperwiki.com/run/usps_lookup/
+</section>
+
+<section class="slide">
+	<h2>Skip annoying sections</h2>
+
 </section>
 
 <section class="slide">
 	<h1>Python tricks</h1>
 </section>
 
+Skipping unusually complex sections of files and maybe doing them manually (like odyssey and dairy)
 <section class="slide">
 	<h2>unidecode</h2>
 </section>
@@ -92,15 +154,21 @@
 </section>
 
 <section class="slide">
-	<h2></h2>
+	<h2>demjson</h2>
+</section>
+
+<section class="slide">
+	<h1>Shell tricks</h1>
 </section>
 
 <section class="slide">
 	<h2></h2>
+tr, sed 1d, wc
 </section>
 
 <section class="slide">
 	<h2></h2>
+pdftohtml, pdftotext, pdfimages, inkscape
 </section>
 
 <section class="slide">
@@ -110,6 +178,13 @@
 
 <section class="slide">
 	<h2></h2>
+So you can go through this process to clean up all the data, but when you're
+just presenting some figures, you can do some stupidly easy analysis instead.
+
+Talk about stupidly basic analyses and how that's already useful.
+* FALLOS
+* String matches (SELECT count(*) from foo where bar LIKE %baz%;)
+* 
 </section>
 
 <section class="slide">
