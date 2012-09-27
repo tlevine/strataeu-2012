@@ -268,6 +268,7 @@ Zipcode lookup API https://views.scraperwiki.com/run/usps_lookup/
 
 <section class="slide">
 	<h2>Skip annoying sections</h2>
+Skipping unusually complex sections of files and maybe doing them manually (like odyssey and dairy)
 	<pre><code>
 </pre></code>
 </section>
@@ -276,7 +277,6 @@ Zipcode lookup API https://views.scraperwiki.com/run/usps_lookup/
 	<h1>Python tricks</h1>
 </section>
 
-Skipping unusually complex sections of files and maybe doing them manually (like odyssey and dairy)
 <section class="slide">
 	<h2>unidecode</h2>
 	<pre><code>
@@ -321,14 +321,25 @@ pdftohtml, pdftotext, pdfimages, inkscape
 </section>
 
 <section class="slide">
-	<h2></h2>
-So you can go through this process to clean up all the data, but when you're
-just presenting some figures, you can do some stupidly easy analysis instead.
+	<h1>You don't need to know what you're doing.</h1>
+</section>
 
-Talk about stupidly basic analyses and how that's already useful.
-* FALLOS
-* String matches (SELECT count(*) from foo where bar LIKE %baz%;)
-* 
+<section class="slide">
+	<h2>Wetlands output</h2>
+	<p>Does the public notice contain the phrase "Section 404"?</p>
+	<pre><code># This is Python code
+'section404' in rawtext.replace(' ', '').lower()
+</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Finding money in papers</h2>
+	<p>We have government documents that discuss money. Let's find the juicy ones. (I present a slightly simplified version of <a href="https://gist.github.com/3762741">this</a>.)</p>
+	<p>Convert pdfs to text (in shell)</p>
+<pre><code>pdftotext file0283.pdf</code></pre>
+	<p>Find amounts of money.</p>
+<pre><code>cat file.txt | tr -d\  | grep -H $[a-z,.]+</code></pre> 
+	<p>Then sort, pick out the highest numbers and make a spreadsheet.</p>
 </section>
 
 <section class="slide">
