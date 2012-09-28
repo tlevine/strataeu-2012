@@ -234,6 +234,33 @@
 </section>
 
 <section class="slide">
+	<h2>Use an XML/HTML parser</h2>
+	<ul>
+		<li></li>
+		<li>C#: </li>
+		<li>Java: </li>
+		<li>R: </li>
+		<li>php: simple_html_dom</li>
+		<li>Ruby: Nokogiri</li>
+		<li>Python: lxml, BeautifulSoup</li>
+	</ul>
+	<p>Or not</p>
+</section>
+
+<section class="slide">
+	<h2>Or not</h2>
+	<pre><code>
+# United States postal code
+/([0-9]{5})-?([0-9]{4})?/
+
+# Phone number
+
+# ISBNs
+/([0-9X-]{10,13})/
+</code></pre>
+</section>
+
+<section class="slide">
 	<h2>XPath or CSS?</h2>
 	<p>CSS for HTML, normally.</p>
 	<ul>
@@ -258,6 +285,7 @@ cat raw.txt | tr -d\  | tr '[A-Z]' '[a-z]'
 </code></pre>
 </section>
 
+Other
 <section class="slide">
 	<h2>Write tests</h2>
 	<ul>
@@ -265,33 +293,6 @@ cat raw.txt | tr -d\  | tr '[A-Z]' '[a-z]'
 		<li>Node: mocha, should.js</li>
 		<li>R: <a href="http://">testthat</a></li>
 		<li>Python: <a href="http://">nose</a></li>
-	</ul>
-</section>
-
-<section class="slide">
-	<h2>Initial search for structured codes is easy</h2>
-	<pre><code>
-# United States postal code
-/([0-9]{5})-?([0-9]{4})?/
-
-# Phone number
-
-# ISBNs
-/([0-9X-]{10,13})/
-</code></pre>
-	
-</section>
-
-<section class="slide">
-	<h2>Use an XML/HTML parser</h2>
-	<ul>
-		<li></li>
-		<li>C#: </li>
-		<li>Java: </li>
-		<li>R: </li>
-		<li>php: simple_html_dom</li>
-		<li>Ruby: Nokogiri</li>
-		<li>Python: lxml, BeautifulSoup</li>
 	</ul>
 </section>
 
