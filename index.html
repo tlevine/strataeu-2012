@@ -374,6 +374,20 @@ dt.insert({"payload": "10 tons"})
 <section class="slide">
 	<h2>Manual intervention</h2>
 	<pre><code>
+# List bad pages here
+MALFORMED_PAGES = {
+    ('FooBar-August 05, 2012 1234567890.pdf', 67),
+    ('FooBar-September 02, 2012 1234567890.pdf', 34),
+}
+
+# ...
+
+# Somewhere else in the code
+if (filename, int(page.attrib['number'])) in MALFORMED_PAGES:
+    warnings.warn("I'm skipping page %d because it is marked as malformed." % int(page.attrib['number']), UserWarning)
+else:
+    do(something)
+    blah.blah('blah')
 </pre></code>
 </section>
 
