@@ -222,6 +222,16 @@
 </section>
 
 <section class="slide">
+	<h2>Dividing labor</h2>
+	<p>Complex jobs become simple and easy when we divide them like this.</p>
+	<ul>
+		<li>Write parts at a time.</li>
+		<li>Some parts analog, some parts digital</li>
+		<li>Multiple teams/people can work in parallel.</li>
+	</ul>
+</section>
+
+<section class="slide">
 	<h1>Abrupt transition</h1>
 </section>
 
@@ -236,13 +246,13 @@
 <section class="slide">
 	<h2>Use an XML/HTML parser</h2>
 	<ul>
-		<li></li>
-		<li>C#: </li>
-		<li>Java: </li>
-		<li>R: </li>
-		<li>php: simple_html_dom</li>
-		<li>Ruby: Nokogiri</li>
+		<li>R: XML</li>
 		<li>Python: lxml, BeautifulSoup</li>
+		<li>C#: XmlDocument, XmlReader</li>
+		<li>VBA: XmlDocument, XmlReader</li>
+		<li>Java: Java API for XML Processing (JAXP)</li>
+		<li>php: SimpleXML, XML Parser, simple_html_dom</li>
+		<li>Ruby: Nokogiri</li>
 	</ul>
 	<p>Or not</p>
 </section>
@@ -250,12 +260,16 @@
 <section class="slide">
 	<h2>Or not</h2>
 	<pre><code>
+# UK Phone number
+/(\+44[0-9 -]{10,15})/
+
 # United States postal code
 /([0-9]{5})-?([0-9]{4})?/
 
-# Phone number
+# URL
+/(https?:\/\/[^ "]+)[ "]/
 
-# ISBNs
+# ISBN
 /([0-9X-]{10,13})/
 </code></pre>
 </section>
