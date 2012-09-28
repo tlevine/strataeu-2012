@@ -274,33 +274,6 @@
 </section>
 
 <section class="slide">
-	<h2>split-apply-combine</h2>
-	You've probably heard this already. If not, read Hadley's paper or watch his talks.
-</section>
-
-<section class="slide">
-	<h2>Document-like interfaces for loading data to relational databases</h2>
-	<p>Document databases have nice interfaces. We can mimic this with relational databases.</p>
-	<pre><code>
-dt = DumpTruck()
-dt.insert({"payload": "10 tons"})
-</code></pre>
-	<p>Similar libraries</p>
-	<ul>
-		<li><a href="http://www.dumptruck.io">dumptruck</a> (Python)</li>
-		<li>node-sqlite (node)</li>
-		(ruby)
-	</ul>
-</section>
-
-<section class="slide">
-	<h2>Skip annoying sections</h2>
-Skipping unusually complex sections of files and maybe doing them manually (like odyssey and dairy)
-	<pre><code>
-</pre></code>
-</section>
-
-<section class="slide">
 	<h1>Python tricks</h1>
 </section>
 
@@ -361,11 +334,21 @@ done
 </section>
 
 <section class="slide">
-	<h1>Write tests</h1>
+	<h1>General tricks</h1>
 </section>
 
 <section class="slide">
-	<h2>Data-munging code is code too.</h2>
+	<h2>CSV/JSON good. Database better.</h2>
+	<p>CouchDB. Relax.</p>
+	<p><a href="http://www.dumptruck.io">DumpTruck</a>. Relax with SQLite.</p>
+	<pre><code>
+dt = DumpTruck()
+dt.insert({"payload": "10 tons"})
+</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Write tests.</h2>
 	<ul>
 		<li>Shell: <a href="http://www.urchin.sh">urchin</a></li>
 		<li>Node: mocha, should.js</li>
@@ -373,6 +356,13 @@ done
 		<li>Python: <a href="http://">nose</a></li>
 	</ul>
 </section>
+
+<section class="slide">
+	<h2>Manual intervention</h2>
+	<pre><code>
+</pre></code>
+</section>
+
 
 <section class="slide">
 	<h1>Telling a story</h1>
