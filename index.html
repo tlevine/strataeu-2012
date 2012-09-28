@@ -305,28 +305,13 @@ Skipping unusually complex sections of files and maybe doing them manually (like
 </section>
 
 <section class="slide">
-	<h2>Quickly search messy text</h2>
+	<h2>Quick search</h2>
 	<p>Removing spaces and make lowercase before searching messy text</p>
 	<pre><code>
-# Python
-''.join(rawtext.split()).lower()
-
-# Shell
-cat raw.txt | tr -d\  | tr '[A-Z]' '[a-z]'
+'brains' in ''.join(messy_ocr_text.split()).lower()
+cat messy_ocr_text.txt | tr -d\  | tr '[A-Z]' '[a-z]' |grep brains
 </code></pre>
 </section>
-
-Other
-<section class="slide">
-	<h2>Write tests</h2>
-	<ul>
-		<li>Shell: <a href="http://www.urchin.sh">urchin</a></li>
-		<li>Node: mocha, should.js</li>
-		<li>R: <a href="http://">testthat</a></li>
-		<li>Python: <a href="http://">nose</a></li>
-	</ul>
-</section>
-
 
 <section class="slide">
 	<h2>unidecode</h2>
@@ -335,10 +320,16 @@ Other
 </section>
 
 <section class="slide">
-	<h2>lxml.etree._HtmlElement.make_links_absolute</h2>
-	http://lxml.de/lxmlhtml.html
-	<pre><code>
-</pre></code>
+	<h1>Other tricks</h1>
+</section>
+<section class="slide">
+	<h2>Write tests</h2>
+	<ul>
+		<li>Shell: <a href="http://www.urchin.sh">urchin</a></li>
+		<li>Node: mocha, should.js</li>
+		<li>R: <a href="http://">testthat</a></li>
+		<li>Python: <a href="http://">nose</a></li>
+	</ul>
 </section>
 
 <section class="slide">
@@ -353,9 +344,14 @@ Other
 </section>
 
 <section class="slide">
-	<h2></h2>
-tr, sed 1d, wc
+	<h2>Union of CSV files</h2>
 	<pre><code>
+# Given a directory with a bunch of CSV files with identical schemas.
+head -n1 1.csv > combined.csv
+for csv in *.csv
+  do
+  sed 1d $csv >> combined.csv
+done
 </pre></code>
 </section>
 
