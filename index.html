@@ -105,6 +105,9 @@
 	<img src="images/highlighted-public-notice.png" alt="Highlighted excerpt of a public notice regarding a New Orleans wetland development" width="70%" >
 </section>
 
+<section id="analog-title" class="slide">
+	<h1>Analog data-cleaning</h1>
+</section>
 <section id="analog-0.1" class="slide">
 	<img src="images/wetlands/IMAG0051.jpg" alt="Sketch on paper of the permit application data-cleaning process">
 </section>
@@ -160,20 +163,62 @@
 	<img src="images/wetlands/IMAG0069.jpg" alt="Sketch on paper of the permit application data-cleaning process">
 </section>
 
-<section class="slide">
-	<h2>New Orleans Wetlands</h2>
-	<p>It also</p>
-	<ul>
-		<li>runs automatically every day</li>
-		<li>saves all of the files</li>
-		<li>checks for changes in files</li>
-		<li>produces a spreadsheet of the extracted information</li>
-		<li>hosts all of this on a website that Scott can access</li>
-	</ul>
-	<p>
-		We're still working out the kinks, but the initial goal is that Scott will be able to use the spreadsheet to quickly
-		find notices that he should look into further. Then he'll read the notice and take whatever actions make sense.
-	</p>
+<section id="digital-title" class="slide">
+	<h1>Digital data-cleaning</h1>
+</section>
+<section id="digital-0.1" class="slide">
+	<img src="images/wetlands/IMAG0051.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-0.2" class="slide">
+	<img src="images/wetlands/IMAG0052.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-0.3" class="slide">
+	<img src="images/wetlands/IMAG0053.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-1.1" class="slide">
+	<img src="images/wetlands/IMAG0054.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-1.2" class="slide">
+	<img src="images/wetlands/IMAG0056.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-1.3" class="slide">
+	<img src="images/wetlands/IMAG0057.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-2.0" class="slide">
+	<img src="images/wetlands/IMAG0058.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-2.1.1" class="slide">
+	<img src="images/wetlands/IMAG0059.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-2.1.2" class="slide">
+	<img src="images/wetlands/IMAG0060.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-2.1.3" class="slide">
+	<img src="images/wetlands/IMAG0061.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-2.1.4" class="slide">
+	<img src="images/wetlands/IMAG0062.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-2.2" class="slide">
+	<img src="images/wetlands/IMAG0063.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-2.3" class="slide">
+	<img src="images/wetlands/IMAG0064.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-3.1" class="slide">
+	<!-- Retrieve from file cabinet. -->
+	<img src="images/wetlands/IMAG0065.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-3.2" class="slide">
+	<!-- Move to the table. -->
+	<img src="images/wetlands/IMAG0066.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-3.3" class="slide">
+	<!-- Transcribe. -->
+	<img src="images/wetlands/IMAG0067.jpg" alt="Sketch on paper of the permit application data-cleaning process">
+</section>
+<section id="digital-4" class="slide">
+	<img src="images/wetlands/IMAG0069.jpg" alt="Sketch on paper of the permit application data-cleaning process">
 </section>
 
 <section class="slide">
@@ -185,28 +230,20 @@
 </section>
 
 <section class="slide">
-	<h1>General tricks</h1>
-</section>
-
-<section class="slide">
-	<h2>Learn standard XML/HTML query languages</h2>
-	<p>
-	Some XML/HTML parsers implement their own query languages.
-	Learn standard query languages so you can switch libraries and platforms.
-	</p>
-	<pre><code></code></pre>
+	<h1>XML/HTML</h1>
 </section>
 
 <section class="slide">
 	<h2>XPath or CSS?</h2>
-	<p>CSS normally makes more sense.</p>
+	<p>CSS for HTML, normally.</p>
 	<ul>
-		<li>CSS should run faster.</li>
-		<li>More people probably know CSS.</li>
+		<li>Faster</li>
+		<li>More people know it.</li>
 		<li>CSS is normally shorter.</li>
 	</ul>
-	<p>XPath is more powerful</p>
-	<!-- Examples, probably on multiple slides -->
+	<p>XPath for more power. For example, select divs that contain tables.</p>
+	<pre><code>//div[table[@class="bacon"]]</code></pre>
+	<p>XPath for non-HTML</p>
 </section>
 
 <section class="slide">
@@ -217,30 +254,18 @@
 ''.join(rawtext.split()).lower()
 
 # Shell
-sed -e 's/ //g' | tr '[A-Z]' '[a-z]'
+cat raw.txt | tr -d\  | tr '[A-Z]' '[a-z]'
 </code></pre>
 </section>
 
 <section class="slide">
 	<h2>Write tests</h2>
-	<pre><code>
-# Forty ads were randomly selected from the 389 that had been scraped by April 16.
-
-# This sample contained eight advertisements about something other than estates.
-# Originally, the scraped data were correct for all eight of these advertisements,
-# and this hasn't changed with the updated scraper.
-unittest.TextTestRunner(verbosity=0).run(nomatch)
-
-# After adjusting the scraper to handle the various cleaning,
-# increasing the number correct to 36 out of 40 match on all fields;
-# after correcting the name suffix issue, this is now 37 of 40.
-unittest.TextTestRunner(verbosity=0).run(removecomma)
-
-# When we ignored missing fields in the original scraper,
-# only 2 were incorrect. In the updated scraper,
-# no incorrect data are reported.
-unittest.TextTestRunner(verbosity=0).run(precision)
-</code></pre>
+	<ul>
+		<li>Shell: <a href="http://www.urchin.sh">urchin</a></li>
+		<li>Node: mocha, should.js</li>
+		<li>R: <a href="http://">testthat</a></li>
+		<li>Python: <a href="http://">nose</a></li>
+	</ul>
 </section>
 
 <section class="slide">
