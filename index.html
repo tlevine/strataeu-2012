@@ -302,15 +302,25 @@
 <section class="slide">
 	<h2>unidecode</h2>
 	<pre><code>
+import unidecode
 unidecode.unidecode(weirdly_encoded_text)
 </pre></code>
 </section>
 
 <section class="slide">
-	<h2>requests</h2>
-	copying a request from the browser network analyzer thingy into a requests request
-	<pre><code>
+	<img src="images/inspect-request.png" alt="Screenshot of chrome browser element inspector" style="float: left; width: 47%;">
+	<pre style="float: right; width: 47%; font-size: 0.5em;"><code>
+import requests
+url = 'http://www.ncr.org.za/register_of_registrants/cp.php'
+params = {
+    'Registered': 'Registered',
+    'name': '',
+    'town': '',
+    'regnum': '',
+}
+print requests.post(url, params).text
 </pre></code>
+<!-- <a href="https://scraperwiki.com/scrapers/ncr5">https://scraperwiki.com/scrapers/ncr5</a> -->
 </section>
 
 <section class="slide">
@@ -356,7 +366,8 @@ done
 	<p>CouchDB. Relax.</p>
 	<p><a href="http://www.dumptruck.io">DumpTruck</a>. Relax with SQLite.</p>
 	<pre><code>
-dt = DumpTruck()
+import dumptruck
+dt = dumptruck.DumpTruck()
 dt.insert({"payload": "10 tons"})
 </code></pre>
 </section>
